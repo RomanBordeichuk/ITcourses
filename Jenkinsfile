@@ -14,19 +14,19 @@ pipeline {
 
         stage('Install Dependencies') {
             steps {
-                npm install
+                sh 'npm install'
             }
         }
 
         stage('Run Tests') {
             steps {
-                npm test
+                sh 'npm test'
             }
         }
 
         stage('Build') {
             steps {
-                npm run build
+                sh 'npm run build'
             }
         }
     }
