@@ -29,14 +29,5 @@ pipeline {
                 sh 'npm run build'
             }
         }
-
-        stage('Deploy') {
-            steps {
-                sshagent(['my-ssh-key']) {
-                    sh 'scp -r ./dist user@server:/var/www/myapp'
-                    sh 'ssh user@server "pm2 restart myapp"'
-                }
-            }
-        }
     }
 }
