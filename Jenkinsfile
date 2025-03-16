@@ -14,21 +14,21 @@ pipeline {
 
         stage('Install Dependencies') {
             steps {
-                sh 'node -v'
-                sh 'npm -v'
-                sh 'npm install'
+                bat 'node -v'
+                bat 'npm -v'
+                bat 'npm install'
             }
         }
 
         stage('Run Tests') {
             steps {
-                sh 'npm test'
+                bat 'npm test'
             }
         }
 
         stage('Build') {
             steps {
-                sh 'npm run build'
+                bat 'npm run build'
             }
         }
     }
